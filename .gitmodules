@@ -1,0 +1,3 @@
+[submodule "brave-together-api"]
+	path = brave-together-api
+	url = https://github.com/gallib2/brave-together-api
