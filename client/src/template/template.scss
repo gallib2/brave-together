@@ -1,3 +1,23 @@
 .template-container {
-    background-color: aqua;
+    padding: 14px;
+    direction: rtl;
+    h5 {
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+    }
+    .template-header {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .templates {
+        display: flex;
+        flex-wrap: wrap;
+    
+        .template-img {
+            width: 160px;
+            margin: 5px;
+        }
+    }
 }

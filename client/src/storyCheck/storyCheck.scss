@@ -1,0 +1,45 @@
+
+.storyCheck-container {
+    direction: rtl;
+    padding: 14px;
+    h5 {
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+    }
+    .categories {
+        margin-bottom: 15px;
+        .category-header {
+           font-size: 18px;
+           margin-bottom: 15px;
+        }
+        .category {
+            margin-left: 15px;
+            padding: 9px 6px;
+            background-color: #bcbcbc80;
+            border: none;
+        }
+    }
+    .chosen-category {
+
+    }
+    .stories {
+        display: flex;
+        flex-wrap: wrap;
+        .story-img {
+            margin: 0px 0 20px 12px;
+            width: 160px;
+            height: 164px;
+            display: flex;
+            // background-size: cover;
+            .title {
+                align-self: flex-end;
+                direction: rtl;
+                background: aliceblue;
+                opacity: 0.6;
+                padding: 3px 6px;
+            }
+        }
+    }
+}
