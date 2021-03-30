@@ -52,7 +52,7 @@ class Testimony extends React.Component {
                             <button className='optional-text' onClick={() => this.onTextChosen(text)} key={index}>{text}</button>
                         );
                     })}
-                    <button className='optional-text'>סימון חופשי</button>
+                    <button className='optional-text free-choice'>סימון חופשי</button>
                 </div>
             </div>
         );

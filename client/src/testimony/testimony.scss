@@ -1,5 +1,7 @@
 .testimony-container {
     direction: rtl;
+    background: #FCF4E8;
+    ;
 
     .testimony-content {
         padding: 14px;
@@ -13,18 +15,24 @@
 
     .choose-text {
         position: fixed;
-        // bottom: 0;
         bottom: 57px;
-        background-color: #ECF0F3;
+        background: #F3DFC0;
         width: 100%;
         padding: 10px;
+        //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        mix-blend-mode: normal;
+        box-shadow: 0px -4px 8px #C4C4C4;
+        border-radius: 20px 20px 20px 0px;
+        //transform: matrix(-1, 0, 0, 1, 0, 0);
         .choose-text-title {
+            background: #F3DFC0;
             text-align: center;
             margin-bottom: 10px;
             margin-top: 10px;
         }
         .texts-container {
             .optional-texts-container {
+
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -33,17 +41,31 @@
                 margin-right: 10px;
                 .optional-text {
                     text-align: right;
-                    background-color: white;
-                    box-shadow: 2px 2px 10px #C4C4C4;
+                    background: #F3DFC0;
+                    //box-shadow: 2px 2px 10px #C4C4C4;
                     border-radius: 5px;
-                    border: none;
+                    border: 1px solid black;
                     margin-bottom: 10px;
                     padding: 10px;
+                    &.free-choice{
+                        background: #292929;
+                        color: #F3DFC0;
+                        //font-family: 'Assistant';
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 20px;
+                        line-height: 10px;
+                        /* or 50% */
+                        
+                        text-align: center;
+                        letter-spacing: 0.05em;
+                    }
                 }
             }
             .choose-text-title {
                 text-align: center;
                 margin-bottom: 20px;
+               
                 .close-icon {
                     position: absolute;
                     right: 36px;
