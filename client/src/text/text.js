@@ -23,14 +23,9 @@ class TextEdit extends React.Component {
     }
 
     onPickAnotherText = () => {
-        this.props.history.push({
-            pathname: `/testimony`,
-            state:
-            {
-                template: this.props.history.location.state.template
-            }
-        })
+        this.props.history.goBack()
     }
+        
 
     handleChange = (event) => {
         this.setState({fixedText: event.target.value});
@@ -41,7 +36,6 @@ class TextEdit extends React.Component {
         return (
             <div className='text-container'>
                 <div className='continue-back'>
-                <BackButton history={{...this.props.history}}/> 
                 <button className='reject-button' onClick={this.onPickAnotherText}>X</button>
                     <button className='accept-button' onClick={this.onSubmitText}>V</button>
                 </div>
