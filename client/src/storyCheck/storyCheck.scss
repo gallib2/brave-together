@@ -1,5 +1,6 @@
 
 .storyCheck-container {
+    background-color:#FCF4E8 ;
     direction: rtl;
     padding: 14px;
     h5 {
@@ -15,10 +16,13 @@
            margin-bottom: 15px;
         }
         .category {
+            
             margin-left: 15px;
             padding: 9px 6px;
-            background-color: #bcbcbc80;
-            border: none;
+            background-color: #FCF4E8;
+            border: 1px solid black;
+            border-radius: 5px;
+    
         }
     }
     .chosen-category {
@@ -32,13 +36,18 @@
             width: 160px;
             height: 164px;
             display: flex;
+            border-radius: 12px;
             // background-size: cover;
             .title {
                 align-self: flex-end;
+                width: 100%;
+                height: 50px;
                 direction: rtl;
                 background: aliceblue;
                 opacity: 0.6;
                 padding: 3px 6px;
+                border-bottom-left-radius:12px ;
+                border-bottom-right-radius:12px ;
             }
         }
     }
