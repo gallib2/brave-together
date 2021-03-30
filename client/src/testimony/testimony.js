@@ -3,6 +3,8 @@ import React from 'react';
 import './testimony.scss';
 
 import mock from './mock';
+import BackButton from '../backButton/backButton';
+
 
 class Testimony extends React.Component {
     constructor(props) {
@@ -43,6 +45,7 @@ class Testimony extends React.Component {
     getTexts = () => {
         return (
             <div className='texts-container'>
+                 
                 <div className='choose-text-title'> טקסט לבחירה
                 <span className='close-icon' onClick={this.openTextsOptions} >X</span>
                 </div>
@@ -65,6 +68,7 @@ class Testimony extends React.Component {
     render() {
         return (
             <div className='testimony-container'>
+                <BackButton history={{...this.props.history}}/>
                 <div className='testimony-content'>
                     <h5>שלב 2 מתוך 4 </h5>
                     <h3>בחרו טקסט מעצים והוסיפו אותו לטיימפליט שלכם.ן </h3>
