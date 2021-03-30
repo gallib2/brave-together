@@ -5,6 +5,8 @@ import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import Template from './template/template';
 import StoryCheck from './storyCheck/storyCheck';
 import Testimony from './testimony/testimony';
+import TextEdit from './text/text';
+import TemplateEdit from './templateEdit/template-edit';
 
 function App() {
   return (
@@ -13,15 +15,10 @@ function App() {
         <Route exact path='/' component={Template} />
         <Route exact path='/storyCheck' component={StoryCheck} />
         <Route exact path='/testimony' component={Testimony} />
-        {/* <Route exact path='/textEdit' component={TextEdit} /> */}
+        <Route exact path='/textEdit' component={TextEdit} />
+        <Route exact path='/templateEdit' component={TemplateEdit} />
         <Route path='*' component={() => '404 Not Found'} />
       </Switch>
-      <div className='menu'>
-        <div className='menu-icon'>O</div>
-        <div className='menu-icon'>P</div>
-        <div className='menu-icon'>K</div>
-        <div className='menu-icon'>J</div>
-      </div>
     </BrowserRouter>
   )
 }

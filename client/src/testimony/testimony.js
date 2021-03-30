@@ -25,6 +25,20 @@ class Testimony extends React.Component {
         this.setState({ testimony: testimony });
     }
 
+    onTextChosen = (text) => {
+        const template = {
+            backgroundImg: this.props.history.location.state.template.backgroundImg,
+            text: text
+        }
+        this.props.history.push({
+            pathname: `/textEdit`,
+            state:
+            {
+                template: template
+            }
+        })
+    }
+
 
     getTexts = () => {
         return (
@@ -35,7 +49,7 @@ class Testimony extends React.Component {
                 <div className='optional-texts-container'>
                     {this.state.testimony.optionalTexts.map((text, index) => {
                         return (
-                            <button className='optional-text' key={index}>{text}</button>
+                            <button className='optional-text' onClick={() => this.onTextChosen(text)} key={index}>{text}</button>
                         );
                     })}
                     <button className='optional-text'>סימון חופשי</button>
