@@ -2,6 +2,9 @@ import React from 'react';
 
 import './template.scss';
 
+import { withRouter } from 'react-router-dom';
+
+
 const mock = [
     {id: 1, backgroundImg: 'images/template1.png', templateImg: `images/template1.png`},
     {id: 2, backgroundImg: 'images/template1.png', templateImg: 'https://s3-alpha-sig.figma.com/img/6917/a6e6/5220c88b3098075d6c9900f761142805?Expires=1617580800&Signature=BAxi2ut1sjU2r7o9IrLOnPLeffRWqOA0TFug~1SGrb4x~NEyJUaCE3Z5AJjgt0us8GJIxY0LpLt4VNW2v7Yh1ypn5xj5-vE6mVeBxV8po4Njs3m6caGjAWKko0wWBsnZ0XyomRB~AbigrsUCb8oCflTwI0bKHu64HZ9ew0RujiEydoRnn79UscSHrqjerrrLYmYddQVmEFlmtYPCv8oqlvzqqb2~mxs6Gocr9I9qWh48Tbp1~lUbLWt2ll1Dasevs8oFUOTp6u3jbXUuOR7tI1JlYm~I16HOHfLWQKV-i8yWR-LDfM5RxRvGgbLM24ncup4kDTB75rb7Fzn7NlYA6Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'},
@@ -44,5 +47,7 @@ class Template extends React.Component {
         )
     }
 }
+
+
 
 export default Template;
