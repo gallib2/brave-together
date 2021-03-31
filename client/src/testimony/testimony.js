@@ -5,6 +5,11 @@ import './testimony.scss';
 import mock from './mock';
 import BackButton from '../backButton/backButton';
 
+const buttonOptions = {
+    chooseText: 'chooseText',
+    textOptions: 'textOptions',
+    submitChoice: 'submitChoise'
+}
 
 class Testimony extends React.Component {
     constructor(props) {
@@ -14,6 +19,7 @@ class Testimony extends React.Component {
             testimony: {},
             toShowTexts: false,
             freeSelection: "",
+            buttonToShow: buttonOptions.chooseText
         }
     }
 
@@ -46,9 +52,9 @@ class Testimony extends React.Component {
     getTexts = () => {
         return (
             <div className='texts-container'>
-                 
+
                 <div className='choose-text-title'> טקסט לבחירה
-                <span className='close-icon' onClick={this.openTextsOptions} >X</span>
+                <span className='close-icon' onClick={() => this.setButtonContent(buttonOptions.chooseText)} >X</span>
                 </div>
                 <div className='optional-texts-container'>
                     {this.state.testimony.optionalTexts.map((text, index) => {
@@ -63,29 +69,58 @@ class Testimony extends React.Component {
     }
 
     getFreeChoice = (event) => {
-            //close selection menu "openTextsOptions"
-            this.openTextsOptions(event)
+        this.setButtonContent(buttonOptions.submitChoice);
 
-            // addEventListener version
-            document.addEventListener('selectionchange', this.handelSelectionChange);
+        document.addEventListener('selectionchange', this.handelSelectionChange); // tODO G - remove the event
     }
 
     handelSelectionChange = () => {
-         //chack text "selection = window.getSelection().toString();"
-      const freeSelection = window.getSelection().toString()
-      this.setState({freeSelection}) 
+        //chack text "selection = window.getSelection().toString();"
+        const freeSelection = window.getSelection().toString()
+        this.setState({ freeSelection })
     }
 
-   
+    setButtonContent = (choice) => {
+        this.setState({ buttonToShow: choice })
+    }
 
-    openTextsOptions = (event) => {
-        this.setState({ toShowTexts: !this.state.toShowTexts })
+    onSubmitFreeSelection = () => {
+        if(!this.state.freeSelection) {
+            alert('your selection is empty, please select text or choose from the options');
+            return;
+        }
+
+        document.removeEventListener('selectionchange', this.handelSelectionChange);
+        this.onTextChosen(this.state.freeSelection);
+    }
+
+    buttonContent = () => {
+        switch (this.state.buttonToShow) {
+            case buttonOptions.chooseText: {
+                return (
+                    <div className='choose-text-title' onClick={() => this.setButtonContent(buttonOptions.textOptions)}>בחרו טקסט</div>
+                );
+            }
+            case buttonOptions.textOptions: {
+                return this.getTexts();
+            }
+            case buttonOptions.submitChoice: {
+                return (
+                    <React.Fragment>
+                        <div className='choose-text-title' onClick={() => this.setButtonContent(buttonOptions.textOptions)}>חזרה לאפשרויות</div>
+                        <div className='choose-text-title' onClick={this.onSubmitFreeSelection}>אישור</div>
+                    </React.Fragment>
+                );
+            }
+            default:
+                break;
+        }
     }
 
     render() {
         return (
             <div className='testimony-container'>
-                <BackButton history={{...this.props.history}}/>
+                <BackButton history={{ ...this.props.history }} />
                 <div className='testimony-content'>
                     <h5>שלב 2 מתוך 4 </h5>
                     <h3>בחרו טקסט מעצים והוסיפו אותו טמפלייט שלכם.ן </h3>
@@ -97,13 +132,8 @@ class Testimony extends React.Component {
                     </div>
                 </div>
                 <div className='choose-text'>
-                    {this.state.toShowTexts ?
-                        this.getTexts() :
-                        <React.Fragment>
-                            <div className='choose-text-title' onClick={this.openTextsOptions}>מומלצים</div>
-                            <div className='choose-text-title' onClick={() => this.onTextChosen(this.state.freeSelection)}>בחירה חופשית</div>
-
-                        </React.Fragment>
+                    {
+                        this.buttonContent()
                     }
                 </div>
             </div>
