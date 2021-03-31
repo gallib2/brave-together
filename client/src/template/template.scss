@@ -1,5 +1,6 @@
 .template-container {
-    background: #FCF4E8;
+    color: #003E6A;
+    background: #FBF9FA;
     padding: 14px;
     direction: rtl;
     h5 {
@@ -9,10 +10,13 @@
         text-align: center;
     }
     .template-header {
-        font-size: 18px;
+        color: #003E6A;
+        font-size: 15px;
         margin-bottom: 15px;
+        font-weight: bold;
     }
     .templates {
+        color: #003E6A;
         display: flex;
         flex-wrap: wrap;
     
