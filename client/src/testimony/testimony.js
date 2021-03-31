@@ -3,6 +3,8 @@ import React from 'react';
 import './testimony.scss';
 
 import mock from './mock';
+import BackButton from '../backButton/backButton';
+
 
 class Testimony extends React.Component {
     constructor(props) {
@@ -11,6 +13,7 @@ class Testimony extends React.Component {
         this.state = {
             testimony: {},
             toShowTexts: false,
+            freeSelection: "",
         }
     }
 
@@ -43,6 +46,7 @@ class Testimony extends React.Component {
     getTexts = () => {
         return (
             <div className='texts-container'>
+                 
                 <div className='choose-text-title'> טקסט לבחירה
                 <span className='close-icon' onClick={this.openTextsOptions} >X</span>
                 </div>
@@ -52,11 +56,27 @@ class Testimony extends React.Component {
                             <button className='optional-text' onClick={() => this.onTextChosen(text)} key={index}>{text}</button>
                         );
                     })}
-                    <button className='optional-text free-choice'>סימון חופשי</button>
+                    <button className='optional-text free-choice' onClick={this.getFreeChoice}>סימון חופשי</button>
                 </div>
             </div>
         );
     }
+
+    getFreeChoice = (event) => {
+            //close selection menu "openTextsOptions"
+            this.openTextsOptions(event)
+
+            // addEventListener version
+            document.addEventListener('selectionchange', this.handelSelectionChange);
+    }
+
+    handelSelectionChange = () => {
+         //chack text "selection = window.getSelection().toString();"
+      const freeSelection = window.getSelection().toString()
+      this.setState({freeSelection}) 
+    }
+
+   
 
     openTextsOptions = (event) => {
         this.setState({ toShowTexts: !this.state.toShowTexts })
@@ -65,12 +85,13 @@ class Testimony extends React.Component {
     render() {
         return (
             <div className='testimony-container'>
+                <BackButton history={{...this.props.history}}/>
                 <div className='testimony-content'>
                     <h5>שלב 2 מתוך 4 </h5>
-                    <h3>בחרו טקסט מעצים והוסיפו אותו לטיימפליט שלכם.ן </h3>
-                    <div>{this.state.testimony.title}</div>
+                    <h3>בחרו טקסט מעצים והוסיפו אותו טמפלייט שלכם.ן </h3>
+                    <div className='contant-title'>{this.state.testimony.title}</div>
                     <div className='content-container'>
-                        <div className='content'>
+                        <div className='content- body'>
                             {this.state.testimony.testimony}
                         </div>
                     </div>
@@ -78,7 +99,11 @@ class Testimony extends React.Component {
                 <div className='choose-text'>
                     {this.state.toShowTexts ?
                         this.getTexts() :
-                        <div className='choose-text-title' onClick={this.openTextsOptions}>בחר טקסט</div>
+                        <React.Fragment>
+                            <div className='choose-text-title' onClick={this.openTextsOptions}>מומלצים</div>
+                            <div className='choose-text-title' onClick={() => this.onTextChosen(this.state.freeSelection)}>בחירה חופשית</div>
+
+                        </React.Fragment>
                     }
                 </div>
             </div>

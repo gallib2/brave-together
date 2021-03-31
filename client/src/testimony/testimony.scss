@@ -1,15 +1,29 @@
 .testimony-container {
+    color: #003E6A;
     direction: rtl;
-    background: #FCF4E8;
+    background: #FBF9FA;
     ;
 
     .testimony-content {
+        //color: #003E6A;
+        //font-size: 30px;
         padding: 14px;
         h5 {
             text-align: center;
         }
         h3 {
             text-align: center;
+        }
+        .content-title{
+            color: #003E6A;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 7px;
+        }
+
+        .content-body{
+            font-size: 18px;
+            color: #292929;
         }
     }
 
@@ -30,9 +44,9 @@
             margin-bottom: 10px;
             margin-top: 10px;
         }
-        .texts-container {
+        .texts-container {   
             .optional-texts-container {
-
+                //color: #003E6A;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
