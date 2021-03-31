@@ -1,0 +1,54 @@
+.template-edit-container {
+    .template-edit-title {
+
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .drawer-container {
+        background-color: #F3DFC0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 20% 20% 0 0;
+        height: 220px;
+
+        .drawer-content {
+            .drawer-content-header {
+
+            }
+            .edit-options {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                .edit-option {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+            .save-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                >div {
+                    padding: 15px;
+                    margin-bottom: 5px;
+                    color: white;
+                    background-color: rgb(144, 197, 228);
+                    border: 1px blue solid;
+                }
+            }
+
+            .drawer-options {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+    }
+}
