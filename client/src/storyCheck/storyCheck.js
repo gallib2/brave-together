@@ -51,8 +51,7 @@ class StoryCheck extends React.Component {
         return (
             <div className='storyCheck-container'>
                 <BackButton history={{...this.props.history}}/> 
-                <h5>שלב 1 מתוך 4 </h5>
-                <h3>בחרו עדות ומתוכה הדגישו את ההעצמה היומית שלכם.ן</h3>
+                <h3>בחרו עדות ומתוכה הדגישו את העצמה היומית שלכם.ן</h3>
                 <div className='categories'>
                     <div className='category-header'>קטגוריות</div>
                     {categories.map((categoty, index) => {
