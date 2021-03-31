@@ -3,6 +3,7 @@ import * as htmlToImage from 'html-to-image';
 import mock from './mock';
 
 import './template-edit.scss';
+import BackButton from '../backButton/backButton';
 
 // https://codepen.io/sosuke/pen/Pjoqqp
 
@@ -252,9 +253,12 @@ class TemplateEdit extends React.Component {
                         onClick={() => this.getContentOptions('images')}/>
                     <div className='edit-option' style={{backgroundImage: `url(${font})`}}/>
                 </div>
+                
+                <div className='share-buttons'>
+                    <div onClick={this.shareImg}>שתף</div>
+                </div>
                 <div className='save-buttons'>
-                    <div onClick={this.shareImg}>share</div>
-                    <div onClick={this.saveImage}>save</div>
+                    <div onClick={this.saveImage}>שמור</div>
                 </div>
             </div>
         );
@@ -263,7 +267,8 @@ class TemplateEdit extends React.Component {
     render() {
         return (
             <div className='template-edit-container'>
-                <div className='template-edit-title'>design</div>
+                <BackButton history={{...this.props.history}}/>
+                <div className='template-edit-title'>עצבו את מסר הגבורה שלכם.ן</div>
                 <div className='image-container'>
                     <div id={this.imageId} style={this.getBGStyle()}>
                         <div style={this.getImgStyle()}></div>
