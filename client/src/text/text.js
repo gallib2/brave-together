@@ -2,6 +2,10 @@ import React from 'react';
 
 import './text.scss';
 
+const images = [
+    'images/icons/CloseIcon.png',
+    'images/icons/VeeIcon.png',
+]
 class TextEdit extends React.Component {
 
     constructor(props) {
@@ -35,8 +39,8 @@ class TextEdit extends React.Component {
         return (
             <div className='text-container'>
                 <div className='continue-back'>
-                    <button className='reject-button' onClick={this.onPickAnotherText}>X</button>
-                    <button className='accept-button' onClick={this.onSubmitText}>V</button>
+                    <div className='reject-button' style = {{backgroundImage: `url(${images[0]})`}} onClick={this.onPickAnotherText}/>
+                    <div className='accept-button' style = {{backgroundImage: `url(${images[1]})`}} onClick={this.onSubmitText}/>
                 </div>
                     <h3>ערכו טקסט</h3>
                 

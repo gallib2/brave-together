@@ -2,7 +2,7 @@ import React from 'react';
 
 import './backButton.scss';
 
-
+const backButtonIcon = 'images/icons/Back.png'
 class BackButton extends React.Component {
 
     onBackButtonClick = () => {
@@ -11,9 +11,10 @@ class BackButton extends React.Component {
 
     render() {
         return (
-            <div className='go-back'>
-                <button onClick={this.onBackButtonClick}>back</button>
-            </div>
+
+            
+            <div className='go-back' style = {{backgroundImage: `url(${backButtonIcon})`}} onClick={this.onBackButtonClick}/>
+               
         )
     }
 }
