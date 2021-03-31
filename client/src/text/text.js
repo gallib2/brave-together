@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './text.scss';
-import BackButton from '../backButton/backButton';
 
 class TextEdit extends React.Component {
 
@@ -36,7 +35,7 @@ class TextEdit extends React.Component {
         return (
             <div className='text-container'>
                 <div className='continue-back'>
-                <button className='reject-button' onClick={this.onPickAnotherText}>X</button>
+                    <button className='reject-button' onClick={this.onPickAnotherText}>X</button>
                     <button className='accept-button' onClick={this.onSubmitText}>V</button>
                 </div>
                     <h3>ערכו טקסט</h3>
