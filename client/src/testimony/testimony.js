@@ -88,10 +88,10 @@ class Testimony extends React.Component {
                 <BackButton history={{...this.props.history}}/>
                 <div className='testimony-content'>
                     <h5>שלב 2 מתוך 4 </h5>
-                    <h3>בחרו טקסט מעצים והוסיפו אותו לטיימפליט שלכם.ן </h3>
-                    <div>{this.state.testimony.title}</div>
+                    <h3>בחרו טקסט מעצים והוסיפו אותו טמפלייט שלכם.ן </h3>
+                    <div className='contant-title'>{this.state.testimony.title}</div>
                     <div className='content-container'>
-                        <div className='content'>
+                        <div className='content- body'>
                             {this.state.testimony.testimony}
                         </div>
                     </div>
