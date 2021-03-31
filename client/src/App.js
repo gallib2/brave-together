@@ -10,6 +10,7 @@ import TextEdit from './text/text';
 import TemplateEdit from './templateEdit/template-edit';
 import Share from './share/share';
 //import BackButton from './backButton/backButton';
+import ThankYouForComing from './thankYouForComing/thankYouForComing';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/textEdit' component={TextEdit} />
         <Route exact path='/templateEdit' component={TemplateEdit} />
         <Route exact path='/share' component={Share} />
+        <Route exact path='/thankYouForComing' component={ThankYouForComing} />
         <Route path='*' component={() => '404 Not Found'} />
       </Switch>
     </BrowserRouter>
