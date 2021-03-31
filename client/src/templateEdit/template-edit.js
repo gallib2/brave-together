@@ -150,6 +150,15 @@ class TemplateEdit extends React.Component {
     }
 
     saveImage = () => {
+
+        // htmlToImage.toJpeg(document.getElementById(this.imageId), { quality: 0.95 })
+        // .then(function (dataUrl) {
+        //     var link = document.createElement('a');
+        //     link.download = 'my-image-name.jpeg';
+        //     link.href = dataUrl;
+        //     link.click();
+        // });
+
         htmlToImage.toPng(document.getElementById(this.imageId))
         .then(function (dataUrl) {
             var link = document.createElement('a');
@@ -163,6 +172,47 @@ class TemplateEdit extends React.Component {
     }
 
     shareImg = () => {
+
+        htmlToImage.toCanvas(document.getElementById(this.imageId))
+        .then((canvas) => {
+            // function imageBase64ToBlob(dataURI) {
+            //     var binary = atob(dataURI.split(',')[1]);
+            //     var array = [];
+            //     for(var i = 0; i < binary.length; i++) {
+            //         array.push(binary.charCodeAt(i));
+            //     }
+            //     return new Blob([new Uint8Array(array)], {type: 'image/png'});
+            // }
+            // // document.body.appendChild(canvas);
+            // console.log('canvas: ', canvas.toDataURL())
+            // const blob = imageBase64ToBlob(canvas.toDataURL());
+            
+            // this.setState({shareUrl: dataUrl})
+
+            // this.props.history.push({
+            //     pathname: `/share`,
+            //     state:
+            //     {
+            //         shareUrl: dataUrl,
+            //     }
+            // })
+        });
+
+
+        // htmlToImage.toJpeg(document.getElementById(this.imageId), { quality: 0.95 })
+        // .then((dataUrl) => {
+        //     this.setState({shareUrl: dataUrl})
+            
+        //     this.props.history.push({
+        //         pathname: `/share`,
+        //         state:
+        //         {
+        //             shareUrl: dataUrl,
+        //         }
+        //     })
+        // });
+
+
         htmlToImage.toPng(document.getElementById(this.imageId))
         .then((dataUrl) => {
             // var link = document.createElement('a');
@@ -172,6 +222,14 @@ class TemplateEdit extends React.Component {
             // return dataUrl;
 
             this.setState({shareUrl: dataUrl})
+
+            this.props.history.push({
+                pathname: `/share`,
+                state:
+                {
+                    shareUrl: dataUrl,
+                }
+            })
         })
         .catch(function (error) {
             console.error('oops, something went wrong!', error);
@@ -216,10 +274,10 @@ class TemplateEdit extends React.Component {
                     {!this.state.isOptionChosen && this.getDrawerContent()}
                     {this.state.isOptionChosen && this.renderSpecificOptions()}
                 </div>
-                {/* <div className="fb-share-button" 
-                    data-href={'http://localhost:3000/images/template-images/Candle.png'} 
+                    {/* <div className="fb-share-button" 
+                    data-href="https://s3.amazonaws.com/team-23/test.png"
                     data-layout="button_count">
-                </div> */}
+                    </div> */}
             </div>
         )
     }
