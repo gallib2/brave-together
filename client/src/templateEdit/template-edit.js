@@ -1,6 +1,7 @@
 import React from 'react';
 import * as htmlToImage from 'html-to-image';
 import mock from './mock';
+import Draggable from 'react-draggable';
 
 import './template-edit.scss';
 
@@ -106,13 +107,13 @@ class TemplateEdit extends React.Component {
     }
 
     onOptionStyleClick = (chosenOption, option) => {
-        
+
         switch (chosenOption) {
             case 'colors':
-                this.setState({backgroundImageColor: option});
+                this.setState({ backgroundImageColor: option });
                 break;
             case 'images':
-                this.setState({image: option});
+                this.setState({ image: option });
                 break;
             default:
                 break;
@@ -160,49 +161,49 @@ class TemplateEdit extends React.Component {
         // });
 
         htmlToImage.toPng(document.getElementById(this.imageId))
-        .then(function (dataUrl) {
-            var link = document.createElement('a');
-            link.download = 'my-image-name.png';
-            link.href = dataUrl;
-            link.click();
-        })
-        .catch(function (error) {
-            console.error('oops, something went wrong!', error);
-        });
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'my-image-name.png';
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
     }
 
     shareImg = () => {
 
         htmlToImage.toCanvas(document.getElementById(this.imageId))
-        .then((canvas) => {
-            // function imageBase64ToBlob(dataURI) {
-            //     var binary = atob(dataURI.split(',')[1]);
-            //     var array = [];
-            //     for(var i = 0; i < binary.length; i++) {
-            //         array.push(binary.charCodeAt(i));
-            //     }
-            //     return new Blob([new Uint8Array(array)], {type: 'image/png'});
-            // }
-            // // document.body.appendChild(canvas);
-            // console.log('canvas: ', canvas.toDataURL())
-            // const blob = imageBase64ToBlob(canvas.toDataURL());
-            
-            // this.setState({shareUrl: dataUrl})
+            .then((canvas) => {
+                // function imageBase64ToBlob(dataURI) {
+                //     var binary = atob(dataURI.split(',')[1]);
+                //     var array = [];
+                //     for(var i = 0; i < binary.length; i++) {
+                //         array.push(binary.charCodeAt(i));
+                //     }
+                //     return new Blob([new Uint8Array(array)], {type: 'image/png'});
+                // }
+                // // document.body.appendChild(canvas);
+                // console.log('canvas: ', canvas.toDataURL())
+                // const blob = imageBase64ToBlob(canvas.toDataURL());
 
-            // this.props.history.push({
-            //     pathname: `/share`,
-            //     state:
-            //     {
-            //         shareUrl: dataUrl,
-            //     }
-            // })
-        });
+                // this.setState({shareUrl: dataUrl})
+
+                // this.props.history.push({
+                //     pathname: `/share`,
+                //     state:
+                //     {
+                //         shareUrl: dataUrl,
+                //     }
+                // })
+            });
 
 
         // htmlToImage.toJpeg(document.getElementById(this.imageId), { quality: 0.95 })
         // .then((dataUrl) => {
         //     this.setState({shareUrl: dataUrl})
-            
+
         //     this.props.history.push({
         //         pathname: `/share`,
         //         state:
@@ -214,26 +215,26 @@ class TemplateEdit extends React.Component {
 
 
         htmlToImage.toPng(document.getElementById(this.imageId))
-        .then((dataUrl) => {
-            // var link = document.createElement('a');
-            // link.download = 'my-image-name.png';
-            // link.href = dataUrl;
-            // // link.click();
-            // return dataUrl;
+            .then((dataUrl) => {
+                // var link = document.createElement('a');
+                // link.download = 'my-image-name.png';
+                // link.href = dataUrl;
+                // // link.click();
+                // return dataUrl;
 
-            this.setState({shareUrl: dataUrl})
+                this.setState({ shareUrl: dataUrl })
 
-            this.props.history.push({
-                pathname: `/share`,
-                state:
-                {
-                    shareUrl: dataUrl,
-                }
+                this.props.history.push({
+                    pathname: `/share`,
+                    state:
+                    {
+                        shareUrl: dataUrl,
+                    }
+                })
             })
-        })
-        .catch(function (error) {
-            console.error('oops, something went wrong!', error);
-        });
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
     }
 
     getDrawerContent = () => {
@@ -245,12 +246,12 @@ class TemplateEdit extends React.Component {
         return (
             <div className='drawer-content'>
                 <div className='edit-options'>
-                    <div className='edit-option' style={{backgroundImage: `url(${add})`}} />
-                    <div className='edit-option' style={{backgroundImage: `url(${colorFill})`}} 
-                        onClick={() => this.getContentOptions('colors')}/>
-                    <div className='edit-option' style={{backgroundImage: `url(${image})`}} 
-                        onClick={() => this.getContentOptions('images')}/>
-                    <div className='edit-option' style={{backgroundImage: `url(${font})`}}/>
+                    <div className='edit-option' style={{ backgroundImage: `url(${add})` }} />
+                    <div className='edit-option' style={{ backgroundImage: `url(${colorFill})` }}
+                        onClick={() => this.getContentOptions('colors')} />
+                    <div className='edit-option' style={{ backgroundImage: `url(${image})` }}
+                        onClick={() => this.getContentOptions('images')} />
+                    <div className='edit-option' style={{ backgroundImage: `url(${font})` }} />
                 </div>
                 <div className='save-buttons'>
                     <div onClick={this.shareImg}>share</div>
@@ -266,15 +267,19 @@ class TemplateEdit extends React.Component {
                 <div className='template-edit-title'>design</div>
                 <div className='image-container'>
                     <div id={this.imageId} style={this.getBGStyle()}>
-                        <div style={this.getImgStyle()}></div>
-                        <div >{this.text}</div>
+                        <Draggable>
+                            <div style={this.getImgStyle()}></div>
+                        </Draggable>
+                        <Draggable>
+                            <div >{this.text}</div>
+                        </Draggable>
                     </div>
                 </div>
                 <div className="drawer-container">
                     {!this.state.isOptionChosen && this.getDrawerContent()}
                     {this.state.isOptionChosen && this.renderSpecificOptions()}
                 </div>
-                    {/* <div className="fb-share-button" 
+                {/* <div className="fb-share-button" 
                     data-href="https://s3.amazonaws.com/team-23/test.png"
                     data-layout="button_count">
                     </div> */}
