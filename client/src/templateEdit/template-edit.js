@@ -24,6 +24,7 @@ const images = [
 
 const colors = ['#C2DDC8', '#99BFB3', '#E2C547', '#CDD1CC', '#ACACAC', '#D9C1B8', '#D97373', '#2E5559', '#F29966', '#BF4215']
 
+const closeButtonIcon = 'images/icons/CloseIcon.png'
 class TemplateEdit extends React.Component {
     constructor(props) {
         super(props);
@@ -125,10 +126,9 @@ class TemplateEdit extends React.Component {
         return (
             <div className='drawer-content'>
                 <div className='drawer-content-header'>
-                    <span className='drawer-content-title'>title</span>
-                    <span className='drawer-content-close' onClick={() => this.setState({ isOptionChosen: false })}>
-                        X
-                    </span>
+                    <span className='drawer-content-close' style = {{backgroundImage: `url(${closeButtonIcon})`}} onClick={() => this.setState({ isOptionChosen: false })}/>
+                    <span className='drawer-content-title'>צבע/תמונה</span>
+                    
                 </div>
                 <div className='drawer-options'>
                     {
@@ -247,19 +247,34 @@ class TemplateEdit extends React.Component {
         return (
             <div className='drawer-content'>
                 <div className='edit-options'>
-                    <div className='edit-option' style={{ backgroundImage: `url(${add})` }} />
-                    <div className='edit-option' style={{ backgroundImage: `url(${colorFill})` }}
-                        onClick={() => this.getContentOptions('colors')} />
-                    <div className='edit-option' style={{ backgroundImage: `url(${image})` }}
-                        onClick={() => this.getContentOptions('images')} />
-                    <div className='edit-option' style={{ backgroundImage: `url(${font})` }} />
+                    <div>
+                        <div className='edit-option' style={{ backgroundImage: `url(${add})` }}/>
+                        <div className='edit-option-text'>הוספה</div>
+                    </div>
+
+                    <div>
+                        <div className='edit-option' style={{ backgroundImage: `url(${colorFill})` }}
+                            onClick={() => this.getContentOptions('colors')} />
+                        <div className='edit-option-text'>צבע</div>
+                    </div>
+
+                    <div>
+                        <div className='edit-option' style={{ backgroundImage: `url(${image})` }}
+                            onClick={() => this.getContentOptions('images')} />
+                        <div className='edit-option-text'>תמונות</div>
+                    </div>
+
+                    <div>
+                        <div className='edit-option' style={{ backgroundImage: `url(${font})` }} />
+                        <div className='edit-option-text'>פונט</div>
+                    </div>
                 </div>
                 
                 <div className='share-buttons'>
-                    <div onClick={this.shareImg}>שתף</div>
+                    <div onClick={this.shareImg}>שתפו</div>
                 </div>
                 <div className='save-buttons'>
-                    <div onClick={this.saveImage}>שמור</div>
+                    <div onClick={this.saveImage}>שמרו</div>
                 </div>
             </div>
         );

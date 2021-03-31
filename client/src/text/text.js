@@ -42,7 +42,7 @@ class TextEdit extends React.Component {
                     <div className='reject-button' style = {{backgroundImage: `url(${images[0]})`}} onClick={this.onPickAnotherText}/>
                     <div className='accept-button' style = {{backgroundImage: `url(${images[1]})`}} onClick={this.onSubmitText}/>
                 </div>
-                    <h3>ערכו טקסט</h3>
+                    <h3>ערכו את טקסט</h3>
                 
                  <div className='text-area'>
                     <textarea className='text-box'  value={this.state.fixedText} onChange={this.handleChange} maxLength={256}/>

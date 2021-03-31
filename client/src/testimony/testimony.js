@@ -5,6 +5,8 @@ import './testimony.scss';
 import mock from './mock';
 import BackButton from '../backButton/backButton';
 
+const closeButtonIcon='images/icons/CloseIcon.png'
+
 const buttonOptions = {
     chooseText: 'chooseText',
     textOptions: 'textOptions',
@@ -53,8 +55,9 @@ class Testimony extends React.Component {
         return (
             <div className='texts-container'>
 
-                <div className='choose-text-title'> טקסט לבחירה
-                <span className='close-icon' onClick={() => this.setButtonContent(buttonOptions.chooseText)} >X</span>
+                <div className='close-icon' style = {{backgroundImage: `url(${closeButtonIcon})`}} onClick={() => this.setButtonContent(buttonOptions.chooseText)}/>
+                <div className='choose-text-screen-title'> טקסט לבחירה
+                
                 </div>
                 <div className='optional-texts-container'>
                     {this.state.testimony.optionalTexts.map((text, index) => {
@@ -106,10 +109,12 @@ class Testimony extends React.Component {
             }
             case buttonOptions.submitChoice: {
                 return (
-                    <React.Fragment>
-                        <div className='choose-text-title' onClick={() => this.setButtonContent(buttonOptions.textOptions)}>חזרה לאפשרויות</div>
-                        <div className='choose-text-title' onClick={this.onSubmitFreeSelection}>אישור</div>
+                    <dev className='free-text-container'>
+                    <React.Fragment >
+                        <div className='back-to-options' onClick={() => this.setButtonContent(buttonOptions.textOptions)}>חזרה לאפשרויות</div>
+                        <div className='approv-free-text' onClick={this.onSubmitFreeSelection}>אישור</div>
                     </React.Fragment>
+                    </dev>
                 );
             }
             default:
@@ -122,11 +127,10 @@ class Testimony extends React.Component {
             <div className='testimony-container'>
                 <BackButton history={{ ...this.props.history }} />
                 <div className='testimony-content'>
-                    <h5>שלב 2 מתוך 4 </h5>
-                    <h3>בחרו טקסט מעצים והוסיפו אותו טמפלייט שלכם.ן </h3>
-                    <div className='contant-title'>{this.state.testimony.title}</div>
+                    <h3>בחרו טקסט מעצים והוסיפו אותו למסר הגבורה המעוצב שלכם.ן </h3>
+                    <div className='content-title'>{this.state.testimony.title}</div>
                     <div className='content-container'>
-                        <div className='content- body'>
+                        <div className='content-body'>
                             {this.state.testimony.testimony}
                         </div>
                     </div>
