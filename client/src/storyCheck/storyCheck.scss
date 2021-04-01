@@ -5,7 +5,7 @@
   padding: 14px;
 
   h3 {
-    padding-top: 4px;
+    padding-top: 2px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 10px;
@@ -21,7 +21,7 @@
 
     .category-header {
       font-size: 18px;
-      //margin-bottom: 15px;
+      margin-bottom: 10px;
       padding-bottom: 10px;
     }
     .category {
@@ -35,7 +35,9 @@
   }
   .chosen-category {
     font-weight: bold;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 8px;
   }
   .stories {
     display: flex;

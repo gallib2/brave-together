@@ -29,8 +29,8 @@ class Template extends React.Component {
     render() {
         return (
             <div className='template-container'>
-                <h5>ברוכים השבים להעצמה אחת ביום </h5>
-                <h3>בחרו טמפלייט איתו תרצו לעצב את מסר הגבורה שלכם.ן</h3>
+                <div className='second-title'>ברוכים השבים להעצמה אחת ביום </div>
+                <div className='first-title'>בחרו טמפלייט איתו תרצו לעצב את מסר הגבורה שלכם.ן</div>
                 <div className='template-header'> החדשים ביותר </div>
                 <div className='templates'>
                     {
