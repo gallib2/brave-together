@@ -109,12 +109,12 @@ class Testimony extends React.Component {
             }
             case buttonOptions.submitChoice: {
                 return (
-                    <dev className='free-text-container'>
+                    <div className='free-text-container'>
                     <React.Fragment >
                         <div className='back-to-options' onClick={() => this.setButtonContent(buttonOptions.textOptions)}>חזרה לאפשרויות</div>
                         <div className='approv-free-text' onClick={this.onSubmitFreeSelection}>אישור</div>
                     </React.Fragment>
-                    </dev>
+                    </div>
                 );
             }
             default:
