@@ -286,7 +286,7 @@ class TemplateEdit extends React.Component {
                 <BackButton history={{...this.props.history}}/>
                 <div className='template-edit-title'>עצבו את מסר הגבורה שלכם.ן</div>
                 <div className='image-container'>
-                    <div id={this.imageId} style={this.getBGStyle()}>
+                    <div className='image-body' id={this.imageId} style={this.getBGStyle()}>
                         <Draggable>
                             <div style={this.getImgStyle()}></div>
                         </Draggable>
