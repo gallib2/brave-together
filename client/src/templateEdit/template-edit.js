@@ -10,19 +10,19 @@ import BackButton from '../backButton/backButton';
 
 const images = [
     'images/template-images/Candle.png',
-    'images/template-images/davivstar.icon-pic.png',
+    // 'images/template-images/davivstar.icon-pic.png',
     'images/template-images/flower-01.png',
     'images/template-images/flower-02-01.png',
     'images/template-images/olive-leaf-04.png',
 
-    'images/template-images/flower-03-01-01.png',
+    // 'images/template-images/flower-03-01-01.png',
     'images/template-images/hand-01.png',
     'images/template-images/hands-01.png',
     'images/template-images/paperboat-01.png',
     'images/template-images/star-of-david-01.png',
 ]
 
-const colors = ['#C2DDC8', '#99BFB3', '#E2C547', '#CDD1CC', '#ACACAC', '#D9C1B8', '#D97373', '#2E5559', '#F29966', '#BF4215']
+const colors = ['#C2DDC8', '#99BFB3', '#E2C547', '#CDD1CC', '#ACACAC', '#D9C1B8', '#D97373', '#2E5559']
 
 const closeButtonIcon = 'images/icons/CloseIcon.png'
 const logoButtonIcon = 'images/template-images/logo-05.png'
@@ -128,7 +128,7 @@ class TemplateEdit extends React.Component {
             <div className='drawer-content'>
                 <div className='drawer-content-header'>
                     <span className='drawer-content-close' style = {{backgroundImage: `url(${closeButtonIcon})`}} onClick={() => this.setState({ isOptionChosen: false })}/>
-                    <span className='drawer-content-title'>צבע/תמונה</span>
+                    <span className='drawer-content-title'> {this.state.chosenOption === 'colors' ? 'צבע' : 'תמונה'}</span>
                     
                 </div>
                 <div className='drawer-options'>
