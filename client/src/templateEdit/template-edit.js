@@ -25,6 +25,7 @@ const images = [
 const colors = ['#C2DDC8', '#99BFB3', '#E2C547', '#CDD1CC', '#ACACAC', '#D9C1B8', '#D97373', '#2E5559', '#F29966', '#BF4215']
 
 const closeButtonIcon = 'images/icons/CloseIcon.png'
+const logoButtonIcon = 'images/template-images/logo-05.png'
 class TemplateEdit extends React.Component {
     constructor(props) {
         super(props);
@@ -279,7 +280,7 @@ class TemplateEdit extends React.Component {
             </div>
         );
     }
-
+//style={{backgroundImage: `url(${logoButtonIcon})`, width:"50px", height:"50px"}}
     render() {
         return (
             <div className='template-edit-container'>
@@ -291,8 +292,14 @@ class TemplateEdit extends React.Component {
                             <div style={this.getImgStyle()}></div>
                         </Draggable>
                         <Draggable>
-                            <div >{this.text}</div>
+                            <div style={{fontSize:"16px", fontWeight:"700", direction:"rtl"}}>{this.text}</div>
                         </Draggable>
+                        {/* <img src={logoButtonIcon} /> */}
+                        <div style={{backgroundImage: `url(${logoButtonIcon})`, width: '60%',
+                            height: '50px',
+                            backgroundSize: 'contain',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center', margin: "0 auto"}}></div>
                     </div>
                 </div>
                 <div className="drawer-container">
