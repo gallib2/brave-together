@@ -16,6 +16,8 @@ class TextEdit extends React.Component {
     }
 
     onSubmitText = () => {
+        const template = this.props.history.location.state.template;
+        template.text = this.state.fixedText 
         this.props.history.push({
             pathname: `/templateEdit`,
             state:

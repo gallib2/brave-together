@@ -165,7 +165,7 @@ class TemplateEdit extends React.Component {
         htmlToImage.toPng(document.getElementById(this.imageId))
             .then(function (dataUrl) {
                 var link = document.createElement('a');
-                link.download = 'my-image-name.png';
+                link.download = 'brave-together.png';
                 link.href = dataUrl;
                 link.click();
             })
