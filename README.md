@@ -1,4 +1,4 @@
 # brave-together
 
 
-![Alt text](Hackathon_Demo.gif) / ![](Hackathon_Demo.gif)
+![App Demo](Hackathon_Demo.gif) 
