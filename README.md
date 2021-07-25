@@ -2,3 +2,5 @@
  Web app brings together a variety of heroic Holocaust survivors stories and allows users to create and design a post that can be shared on social networks
 
 ![App Demo](Hackathon_Demo.gif) 
+
+[Hackathon website](https://brave-together.com/en/האקתון-הגבורה/)
