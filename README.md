@@ -1,9 +1,9 @@
 # #העצמה אחת ביום - Brave-Together Hackathon project
 
-###Summey
+### Summey
 Web app brings together a variety of heroic Holocaust survivors stories and allows users to create and design a post that can be shared on social networks.
 
-###How it workes
+### How it workes
 The app allows you to create custom hero posts. Users can choose:
  1) Background 
  2) Images to be integrated
