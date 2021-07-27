@@ -1,4 +1,4 @@
-![Logo](Logo.gpeg) # - Brave-Together Hackathon project
+![Logo](Logo.jpeg) # - Brave-Together Hackathon project
 # #העצמה אחת ביום - Brave-Together Hackathon project
 
 ### Summey
