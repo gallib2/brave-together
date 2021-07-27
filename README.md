@@ -11,15 +11,15 @@ The app allows you to create custom hero posts. Users can choose:
 
 ![App Demo](Hackathon_Demo.gif) 
 
-[Brave Together מצעד הגבורה](https://brave-together.com/en/האקתון-הגבורה/) - , is a national social startup, revolutionary educational way to move from passive Holocaust commemoration to active.
+[Brave Together מצעד הגבורה](https://brave-together.com/en/האקתון-הגבורה/) - is a national social startup, revolutionary educational way to move from passive Holocaust commemoration to active.
 
 ## Group member:
-### Development Team:
-- [Gal Libedinsky](https://www.linkedin.com/in/gal-libedinsky)
-- [Regev Aloni](https://www.linkedin.com/in/aloniregev)
-- [Eyal Turtz](https://www.linkedin.com/in/eyal-turtz-7231ab152)
-- [Maya Stein](https://www.linkedin.com/in/maya-stein-7618021b8)
+- ### Development Team:
+ - [Gal Libedinsky](https://www.linkedin.com/in/gal-libedinsky)
+ - [Regev Aloni](https://www.linkedin.com/in/aloniregev)
+ - [Eyal Turtz](https://www.linkedin.com/in/eyal-turtz-7231ab152)
+ - [Maya Stein](https://www.linkedin.com/in/maya-stein-7618021b8)
 
-### UI Team:
-- [Aviv Braunstein](https://www.linkedin.com/in/aviv-braunstein-533607161)
-- [Lior Shahar](https://www.linkedin.com/in/lior-shahar-547244194)
+- ### UI Team:
+ - [Aviv Braunstein](https://www.linkedin.com/in/aviv-braunstein-533607161)
+ - [Lior Shahar](https://www.linkedin.com/in/lior-shahar-547244194)
