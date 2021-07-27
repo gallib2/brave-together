@@ -11,7 +11,8 @@ The app allows you to create custom hero posts. Users can choose:
 
 ![App Demo](Hackathon_Demo.gif) 
 
-[Brave Together מצעד הגבורה](https://brave-together.com/en/האקתון-הגבורה/) - is a national social startup, revolutionary educational way to move from passive Holocaust commemoration to active.
+[Brave Together מצעד הגבורה](https://brave-together.com/en/) - A national social startup, revolutionary educational way to move from passive Holocaust commemoration to active.
+[Hackathon Website](https://brave-together.com/en/האקתון-הגבורה/). 
 
 ## Group member:
 ### Development Team:
