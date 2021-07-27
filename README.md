@@ -1,9 +1,9 @@
 # #העצמה אחת ביום - Brave-Together Hackathon project
 
-### Summey
+## Summey
 Web app brings together a variety of heroic Holocaust survivors stories and allows users to create and design a post that can be shared on social networks.
 
-### How it workes
+## How it workes
 The app allows you to create custom hero posts. Users can choose:
  1) Background 
  2) Images to be integrated
@@ -15,11 +15,11 @@ The app allows you to create custom hero posts. Users can choose:
 
 ## Group member:
 ### Development Team:
-[Gal Libedinsky](https://www.linkedin.com/in/gal-libedinsky)
-[Regev Aloni](https://www.linkedin.com/in/aloniregev)
-[Eyal Turtz](https://www.linkedin.com/in/eyal-turtz-7231ab152)
-[Maya Stein](https://www.linkedin.com/in/maya-stein-7618021b8)
+- [Gal Libedinsky](https://www.linkedin.com/in/gal-libedinsky)
+- [Regev Aloni](https://www.linkedin.com/in/aloniregev)
+- [Eyal Turtz](https://www.linkedin.com/in/eyal-turtz-7231ab152)
+- [Maya Stein](https://www.linkedin.com/in/maya-stein-7618021b8)
 
 ### UI Team:
-[Aviv Braunstein](https://www.linkedin.com/in/aviv-braunstein-533607161)
-[Lior Shahar](https://www.linkedin.com/in/lior-shahar-547244194)
+- [Aviv Braunstein](https://www.linkedin.com/in/aviv-braunstein-533607161)
+- [Lior Shahar](https://www.linkedin.com/in/lior-shahar-547244194)
