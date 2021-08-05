@@ -1,45 +1,67 @@
-
 .storyCheck-container {
-    direction: rtl;
-    padding: 14px;
-    h5 {
-        text-align: center;
-    }
-    h3 {
-        text-align: center;
-    }
-    .categories {
-        margin-bottom: 15px;
-        .category-header {
-           font-size: 18px;
-           margin-bottom: 15px;
-        }
-        .category {
-            margin-left: 15px;
-            padding: 9px 6px;
-            background-color: #bcbcbc80;
-            border: none;
-        }
-    }
-    .chosen-category {
+  color: #003e6a;
+  background-color: #fbf9fa;
+  direction: rtl;
+  padding: 14px;
 
+  h3 {
+    padding-top: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: center;
+  }
+  .categories {
+    color: #003e6a;
+    //margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-weight: bold;
+
+    .category-header {
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
     }
-    .stories {
-        display: flex;
-        flex-wrap: wrap;
-        .story-img {
-            margin: 0px 0 20px 12px;
-            width: 160px;
-            height: 164px;
-            display: flex;
-            // background-size: cover;
-            .title {
-                align-self: flex-end;
-                direction: rtl;
-                background: aliceblue;
-                opacity: 0.6;
-                padding: 3px 6px;
-            }
-        }
+    .category {
+      color: #003e6a;
+      margin-left: 15px;
+      padding: 9px 6px;
+      background-color: #fbf9fa;
+      border: 1px solid #003e6a;
+      border-radius: 5px;
     }
+  }
+  .chosen-category {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 8px;
+  }
+  .stories {
+    display: flex;
+    flex-wrap: wrap;
+
+    .story-img {
+      margin: 0px 0 20px 12px;
+      width: 160px;
+      height: 164px;
+      display: flex;
+      border-radius: 12px;
+      // background-size: cover;
+      .title {
+        color: #666666;
+        align-self: flex-end;
+        width: 100%;
+        height: 50px;
+        direction: rtl;
+        background: aliceblue;
+        opacity: 0.6;
+        padding: 3px 6px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+  }
 }

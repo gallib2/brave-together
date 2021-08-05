@@ -1,0 +1,48 @@
+.thankYou-container {
+  background: #fbf9fa;
+  //padding: 14px;
+  direction: rtl;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    text-align: center;
+    color: #003e6a;
+    padding-top: 45%;
+    padding-bottom: 20%;
+  }
+  h3 {
+    text-align: center;
+    color: #003e6a;
+    padding-bottom: 3%;
+  }
+}
+
+.button-style {
+  margin: auto;
+  align-items: center;
+
+  position: relative;
+
+  border-radius: 5px;
+
+  background: #003e6a;
+  color: #fbf9fa;
+  height: max-content;
+  width: max-content;
+  font-style: unset;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 43px;
+  /* or 50% */
+
+  text-align: justify;
+  letter-spacing: 0.05em;
+
+  padding-left: 10%;
+  padding-right: 10%;
+}
