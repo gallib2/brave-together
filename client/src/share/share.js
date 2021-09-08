@@ -1,31 +1,26 @@
 import React from 'react';
 import AWS from 'aws-sdk';
 import BackButton from '../backButton/backButton';
+import * as htmlToImage from 'html-to-image';
+
 
 import './share.scss';
 
-const S3_BUCKET = 'team-23';
-const REGION = 'us-east-1';
-
-// AWS.config.update({
-//     accessKeyId: '',
-//     secretAccessKey: ''
-// })
+const S3_BUCKET = 'imagestoshare';
+const REGION = 'us-east-2';
+const IdentityPoolId = 'us-east-2:20f3a166-1792-4bce-86df-a3b0892dd39d'
 
 AWS.config.update({
-    // region: "eu-west-1",
-    // endpoint: "s3://team-23",
-    // header: 'Access-Control-Allow-Origin:*',
-    accessKeyId: "AKIAXYIQCGYTQJ74WDUQ",
-    secretAccessKey: "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"
+    region: REGION,
+    credentials: new AWS.CognitoIdentityCredentials({
+      IdentityPoolId: IdentityPoolId
+    })
 });
 
 const myBucket = new AWS.S3({
     params: { Bucket: S3_BUCKET },
     region: REGION,
 })
-
-
 
 function imageBase64ToBlob(dataURI) {
     var binary = atob(dataURI.split(',')[1]);
@@ -48,6 +43,7 @@ class Share extends React.Component {
         }
     }
 
+    /*
     uploadFile = () => {
 
         const params = {
@@ -68,14 +64,51 @@ class Share extends React.Component {
                 if (err) console.log(err)
             })
     }
+    */
 
-    shareImage = () => {
+    shareImage = (socialNetwork) => {
         // this.uploadFile();
         //thankYouForComing
+        const image = this.props.history.location.state.shareUrl
+
+        const S3ImageUrl = this.addPhoto('images', image);
+
+        /*
         this.props.history.push({
             pathname: `/thankYouForComing`
         })
+        */
     }
+
+    addPhoto(albumName, image) {
+        const albumPhotosKey = encodeURIComponent(albumName) + "/";
+        
+        // just to have a unique name.. need to think about something else
+        const photoKey = albumPhotosKey + new Date().toDateString().split(" ").join("");
+      
+        // Use S3 ManagedUpload class as it supports multipart uploads
+        const upload = new AWS.S3.ManagedUpload({
+          params: {
+            Bucket: S3_BUCKET,
+            Key: photoKey,
+            Body: imageBase64ToBlob(image),
+            ContentEncoding: 'base64',
+            ContentType: 'image/png'
+          }
+        });
+      
+        const promise = upload.promise();
+      
+        promise.then(
+          function(data) {
+            alert("Successfully uploaded photo.");
+            return data.Location;
+          },
+          function(err) {
+            return alert("There was an error uploading your photo: ", err.message);
+          }
+        );
+      }
 
 
     render() {
