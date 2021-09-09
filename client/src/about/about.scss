@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid;
+  width: 60%;
+  height: 1500px;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 60px repeat(2, auto) ;
+  grid-gap: 2.5em;
+  justify-content: center;
+  align-content: start;
+  margin: 80px auto 0 auto ;
+  padding: 10px;
+}
+.wrapper > div:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 0 auto 0 auto ;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 345px;
+  padding: 15px 10px 5px 25px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
