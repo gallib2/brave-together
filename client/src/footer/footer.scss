@@ -1,0 +1,72 @@
+.br-100 {
+  border-radius: 100%;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.h2 {
+  height: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  transition: color .15s ease-in;
+}
+
+.link:link, .link:visited {
+  transition: color .15s ease-in;
+}
+
+.link:hover {
+  transition: color .15s ease-in;
+}
+
+.link:active {
+  transition: color .15s ease-in;
+}
+
+.link:focus {
+  transition: color .15s ease-in;
+  outline: 1px dotted currentColor;
+}
+
+.w2 {
+  width: 2rem;
+}
+
+.gray {
+  color: #777;
+}
+
+.pv4 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.ph3 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mr3 {
+  margin-right: 1rem;
+}
+
+.mt4 {
+  margin-top: 2rem;
+}
+
+.tc {
+  text-align: center;
+}
+
+.f6 {
+  font-size: .875rem;
+}
+
+.dim {
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
