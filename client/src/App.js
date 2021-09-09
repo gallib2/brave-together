@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './app.scss';
-import {Switch, Route, BrowserRouter, withRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, withRouter } from 'react-router-dom';
 //import { NativeRouter, BackButton } from 'react-router-native';
 import Template from './template/template';
 import StoryCheck from './storyCheck/storyCheck';
@@ -14,10 +14,13 @@ import Footer from './footer/footer'
 
 //import BackButton from './backButton/backButton';
 import ThankYouForComing from './thankYouForComing/thankYouForComing';
+import Header from './header/header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <BrowserRouter>
+      <Header></Header>
       <Switch>
         <Route exact path='/' component={Template} />
         <Route exact path='/storyCheck' component={StoryCheck} />
@@ -31,7 +34,7 @@ function App() {
       </Switch>
       <Footer></Footer>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
