@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import "./about.scss";
 
 class About extends React.Component {

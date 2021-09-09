@@ -10,7 +10,7 @@ import TextEdit from './text/text';
 import TemplateEdit from './templateEdit/template-edit';
 import Share from './share/share';
 import About from './about/about';
-
+import Footer from './footer/footer'
 
 //import BackButton from './backButton/backButton';
 import ThankYouForComing from './thankYouForComing/thankYouForComing';
@@ -29,6 +29,7 @@ function App() {
         <Route exact path='/About' component={About} />
         <Route path='*' component={() => '404 Not Found'} />
       </Switch>
+      <Footer></Footer>
     </BrowserRouter>
   )
 }
