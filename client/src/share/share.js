@@ -102,7 +102,7 @@ class Share extends React.Component {
         promise.then(
           function(data) {
             alert("Successfully uploaded photo.");
-            return data.Location;
+            console.log(data.Location);
           },
           function(err) {
             return alert("There was an error uploading your photo: ", err.message);
