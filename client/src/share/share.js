@@ -1,7 +1,8 @@
 import React from 'react';
 import AWS from 'aws-sdk';
 import BackButton from '../backButton/backButton';
-import * as htmlToImage from 'html-to-image';
+
+import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 
 import './share.scss';
@@ -22,53 +23,18 @@ const myBucket = new AWS.S3({
     region: REGION,
 })
 
-function imageBase64ToBlob(dataURI) {
-    var binary = atob(dataURI.split(',')[1]);
-    var array = [];
-    for (var i = 0; i < binary.length; i++) {
-        array.push(binary.charCodeAt(i));
-    }
-    return new Blob([new Uint8Array(array)], { type: 'image/png' });
-}
-
-
-
 class Share extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             progress: 0,
-            selectedFile: props.history.location.state.shareUrl
+            selectedFile: props.history.location.state.shareUrl,
+            finalUrl: ''
         }
     }
 
-    /*
-    uploadFile = () => {
-
-        const params = {
-            ACL: 'public-read',//'public-read-write',
-            Body: imageBase64ToBlob(this.props.history.location.state.shareUrl),
-            Bucket: S3_BUCKET,
-            Key: 'test.png',
-            ContentEncoding: 'base64',
-            ContentType: 'image/png'
-        };
-
-        // myBucket.putObject(params)
-        myBucket.upload(params)
-            .on('httpUploadProgress', (evt) => {
-                this.setState({ progress: Math.round((evt.loaded / evt.total) * 100) })
-            })
-            .send((err) => {
-                if (err) console.log(err)
-            })
-    }
-    */
-
     shareImage = (socialNetwork) => {
-        // this.uploadFile();
-        //thankYouForComing
         const image = this.props.history.location.state.shareUrl
 
         const S3ImageUrl = this.addPhoto('images', image);
@@ -80,34 +46,39 @@ class Share extends React.Component {
         */
     }
 
-    addPhoto(albumName, image) {
+    addPhoto = (albumName, image) => {
         const albumPhotosKey = encodeURIComponent(albumName) + "/";
         
         // just to have a unique name.. need to think about something else
-        const photoKey = albumPhotosKey + new Date().toDateString().split(" ").join("");
-      
-        // Use S3 ManagedUpload class as it supports multipart uploads
-        const upload = new AWS.S3.ManagedUpload({
-          params: {
-            Bucket: S3_BUCKET,
-            Key: photoKey,
-            Body: imageBase64ToBlob(image),
-            ContentEncoding: 'base64',
-            ContentType: 'image/png'
-          }
-        });
-      
-        const promise = upload.promise();
-      
-        promise.then(
-          function(data) {
-            alert("Successfully uploaded photo.");
-            console.log(data.Location);
-          },
-          function(err) {
-            return alert("There was an error uploading your photo: ", err.message);
-          }
-        );
+        //const photoKey = albumPhotosKey + new Date().toDateString().split(" ").join("") + '.png';
+        const photoKey = albumPhotosKey + 'myImage' + '.png';
+
+        fetch(image)
+            .then(res => res.blob())
+            .then(res => {
+                const upload = new AWS.S3.ManagedUpload({
+                    params: {
+                      Bucket: S3_BUCKET,
+                      Key: photoKey,
+                      Body: res,
+                      ContentType: 'image/png'
+                    }
+                  });
+          
+                  const promise = upload.promise();
+          
+                  promise.then(
+                    function(data) {
+                      alert("Successfully uploaded photo.");
+                      console.log(data);
+                      
+                      return data;
+                    },
+                    function(err) {
+                      return alert("There was an error uploading your photo: ", err.message);
+                    }
+                  ).then(data => this.setState({finalUrl: data.Location}));
+            })
       }
 
 
