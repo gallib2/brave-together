@@ -2,7 +2,7 @@ const mock = [
     {
         id: 1,
         backgroundImg: 'images/template-1',//'images/111-02.svg',
-        backgroundImageColor: '#2E5559',
+        backgroundImageColor: '#ffffff',
         image: 'images/template-images/olive-leaf-04.png',
         imagePostion: '',
         textDefaultPosition: '',
