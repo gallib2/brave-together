@@ -24,6 +24,17 @@
     }
   }
 
+  .colorPicker{
+    margin-left: auto; 
+    margin-right: 10%;
+  }
+
+  .fontSizes{
+    margin-left: auto; 
+    margin-right: 30%;
+    width: 100px;
+  }
+
   .drawer-container {
     background-color: #dce2ea;
     position: absolute;
@@ -121,6 +132,10 @@
         flex-wrap: wrap;
         margin-right: 10px;
         margin-left: 37px;
+      }
+
+      .edit-option:hover, .edit-option-text:hover, .share-buttons:hover{
+        cursor: pointer;
       }
     }
   }
