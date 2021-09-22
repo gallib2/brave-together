@@ -11,7 +11,6 @@ import './footer.scss';
 
 const Footer = () => (
     <footer class="pv4 ph3 ph5-ns tc">
-        <hr />
         <div className='social-icons-container'>
             <a href="https://www.facebook.com/BraveTogether2018" title="facebook">
                 <FacebookIcon />
@@ -29,7 +28,7 @@ const Footer = () => (
                 <GithubIcon />
             </a>
         </div>
-        <div class="mt4">
+        <div class="mt4 text-buttons-container">
             <a href="#" class="f6 link dim gray dib mr3 mr4-ns">עזרה</a>
             <a href="#" class="f6 link dim gray dib mr3 mr4-ns">צור קשר</a>
             <a href="#" class="f6 link dim gray dib mr3 mr4-ns">אודות</a>
