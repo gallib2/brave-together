@@ -6,9 +6,11 @@ import {
     FacebookShareButton,
     WhatsappShareButton,
     TwitterShareButton,
+    LinkedinShareButton,
     FacebookIcon,
     WhatsappIcon,
-    TwitterIcon
+    TwitterIcon,
+    LinkedinIcon,
 } from 'react-share';
 
 import './share.scss';
@@ -111,25 +113,23 @@ class Share extends React.Component {
 
                 <div className='share-options-drawer'>
                     <div className='title'>שתפו ב</div>
-                    {/* <a href={`https://www.facebook.com/sharer.php?imageurl='https://team-23.s3.amazonaws.com/test.png'}`}>clicklcicl</a> */}
-                    <div className='share-options'>
-                        {/* <div onClick={this.uploadFile}>upload to AWS ?</div> */}
-                        {/* <div className='share-option-container'>
-                            <div className='share-option' style={{ backgroundImage: `url(${FB})` }}
-                                onClick={() => this.shareImage('facebook')} />
-                        </div> */}
 
-                        <div className='share-option-container'>
+                    <div className='share-options'>
+                    {/* <a href={`https://www.facebook.com/sharer.php?imageurl='https://team-23.s3.amazonaws.com/test.png'}`}>clicklcicl</a> */}
+                    <div className='share-option-container'>
                         <FacebookShareButton
                              url = {sharedUrl}  >
                             <FacebookIcon size={50} round={true}  ></FacebookIcon>
                         </FacebookShareButton>
                         </div>
-
-                        <div className='share-option-container'>
-                            {/* <div className='share-option' style={{ backgroundImage: `url(${instegram})` }} */}
-                                {/* onClick={() => this.shareImage('instagrem')} /> */}
+                  
+                    <div className='share-option-container'>
+                        <LinkedinShareButton
+                             url = {sharedUrl}  >
+                            <LinkedinIcon size={50} round={true}  ></LinkedinIcon>
+                        </LinkedinShareButton>
                         </div>
+
                         <div className='share-option-container'>
                             <WhatsappShareButton
                             url={sharedUrl} >
