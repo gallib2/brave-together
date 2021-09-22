@@ -31,6 +31,7 @@ class StoryCheck extends React.Component {
     }
 
     componentDidMount() {
+        /*
         // change to user info from app state??
         axios.get("http://localhost:5000/token",  { 
             auth: {
@@ -44,6 +45,9 @@ class StoryCheck extends React.Component {
                 }
             }).then(res => this.setState({stories: res.data}));
         });
+        */
+
+        this.setState({stories: mock});
     }
     
 
@@ -86,7 +90,8 @@ class StoryCheck extends React.Component {
                             <div key={index} onClick={(event) => this.handleTestimonyClick(event, testimony)}>
                                 <div className='story-img' style={
                                     {
-                                        background: `url(${testimony.media[0]}) no-repeat center`,
+                                        // Need to change to testimony.media[0] because of API structure
+                                        background: `url(${testimony.storyImg}) no-repeat center`,
                                         // backgroundSize: 'cover'
                                     }}>
                                     <div className='title'>
