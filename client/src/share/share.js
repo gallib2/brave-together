@@ -43,6 +43,10 @@ class Share extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.shareImage();
+    }
+
     shareImage = () => {
         const image = this.props.history.location.state.shareUrl
 
@@ -50,9 +54,11 @@ class Share extends React.Component {
 
         // this.uploadFile();
         //thankYouForComing
+        /*
         this.props.history.push({
             pathname: `/thankYouForComing`
         })
+        */
     }
 
     addPhoto = (albumName, image) => {
@@ -92,14 +98,8 @@ class Share extends React.Component {
 
 
     render() {
-        const FB = 'images/icons/FBicon.png';
-        const instegram = 'images/icons/InstIcon.png';
-        const twitter = 'images/icons/TwitterIcon.png';
-        const whatsapp = 'images/icons/whatsappIcon.png';
-
+        //  *** Change to finalUrl (url of image in S3) ***
         const sharedUrl = 'https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F181010131059-australia-best-beaches-cossies-beach-cocos3.jpg';
-
-    
 
         return (
             <div className='share-options-container'>

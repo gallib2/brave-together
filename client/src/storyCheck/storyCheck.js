@@ -31,20 +31,26 @@ class StoryCheck extends React.Component {
     }
 
     componentDidMount() {
+        let token = localStorage.getItem('token');
+        
         /*
-        // change to user info from app state??
-        axios.get("http://localhost:5000/token",  { 
-            auth: {
-                username: 'daniel2@bla.com',
-                password: '1234567890'
-            }
-        }).then(res => {
+        if (!token) {
+            this.props.history.push('/')
+        }
+
+        else {
             axios.get("http://localhost:5000/stories", { 
                 auth: {
                     username: res.data.token
                 }
-            }).then(res => this.setState({stories: res.data}));
-        });
+            }).then(res => {
+                if (res.status == '200' || res.status == 'OK') {
+                    this.setState({stories: res.data})
+                } else {
+                    this.props.history.push('/login');
+                }
+            });
+        }
         */
 
         this.setState({stories: mock});

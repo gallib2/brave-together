@@ -4,6 +4,7 @@ import './testimony.scss';
 
 import mock from './mock';
 import BackButton from '../backButton/backButton';
+import axios from 'axios';
 
 const closeButtonIcon='images/icons/CloseIcon.png'
 
@@ -26,7 +27,28 @@ class Testimony extends React.Component {
     }
 
     componentDidMount() {
-        console.log('this.props.history.location.state: ', this.props.history.location.state);
+        let token = localStorage.getItem('token');
+        
+        /*
+        if (!token) {
+            this.props.history.push('/')
+        }
+
+        else {
+            axios.get(`http://localhost:5000/stories/${this.props.history.location.state.testimony.id}`)
+                .then(res => {
+                    // Update rest of the component according to res.data att names..
+                    if (res.status == '200' || res.status == 'OK') {
+                        this.setState({ testimony: res.data})
+                    }
+                    
+                    else {
+                        this.props.history.push('/login');
+                    }
+                })
+        }
+        */
+
         this.getTestimonyData()
     }
 
