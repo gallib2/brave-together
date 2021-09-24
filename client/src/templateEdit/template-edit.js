@@ -11,16 +11,6 @@ import BackButton from '../backButton/backButton';
 import { Constants } from '../assets/consts';
 // import colored from consts} ;
 
-// https://codepen.io/sosuke/pen/Pjoqqp
-
-// const options = [
-//     {value: 10, label: '10'},
-//     {value: 14, label: '14'}, 
-//     {value: 18, label: '18'},
-//     {value: 22, label: '22'},
-//     {value: 26, label: '26'}
-// ];
-
 const closeButtonIcon = 'images/icons/CloseIcon.png'
 const logoButtonIcon = 'images/template-images/logo-05.png'
 class TemplateEdit extends React.Component {
@@ -253,51 +243,11 @@ class TemplateEdit extends React.Component {
 
         htmlToImage.toCanvas(document.getElementById(this.imageId))
             .then((canvas) => {
-                // function imageBase64ToBlob(dataURI) {
-                //     var binary = atob(dataURI.split(',')[1]);
-                //     var array = [];
-                //     for(var i = 0; i < binary.length; i++) {
-                //         array.push(binary.charCodeAt(i));
-                //     }
-                //     return new Blob([new Uint8Array(array)], {type: 'image/png'});
-                // }
-                // // document.body.appendChild(canvas);
-                // console.log('canvas: ', canvas.toDataURL())
-                // const blob = imageBase64ToBlob(canvas.toDataURL());
-
-                // this.setState({shareUrl: dataUrl})
-
-                // this.props.history.push({
-                //     pathname: `/share`,
-                //     state:
-                //     {
-                //         shareUrl: dataUrl,
-                //     }
-                // })
             });
-
-
-        // htmlToImage.toJpeg(document.getElementById(this.imageId), { quality: 0.95 })
-        // .then((dataUrl) => {
-        //     this.setState({shareUrl: dataUrl})
-
-        //     this.props.history.push({
-        //         pathname: `/share`,
-        //         state:
-        //         {
-        //             shareUrl: dataUrl,
-        //         }
-        //     })
-        // });
 
 
         htmlToImage.toPng(document.getElementById(this.imageId))
             .then((dataUrl) => {
-                // var link = document.createElement('a');
-                // link.download = 'my-image-name.png';
-                // link.href = dataUrl;
-                // // link.click();
-                // return dataUrl;
 
                 this.setState({ shareUrl: dataUrl })
 
@@ -315,7 +265,7 @@ class TemplateEdit extends React.Component {
     }
 
     getDrawerContent = () => {
-        const add = 'images/icons/add.png';
+        const download = 'images/icons/download.png';
         const colorFill = 'images/icons/color-fill.png';
         const image = 'images/icons/imgs.png';
         const font = 'images/icons/font.png';
@@ -324,7 +274,7 @@ class TemplateEdit extends React.Component {
             <div className='drawer-content'>
                 <div className='edit-options'>
                     <div>
-                        <div className='edit-option' style={{ backgroundImage: `url(${add})` }}
+                        <div className='edit-option' style={{ backgroundImage: `url(${download})` }}
                             onClick={() => this.saveImage()}/>
                         <div className='edit-option-text'>הורדה</div>
                     </div>
