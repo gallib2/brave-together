@@ -7,6 +7,7 @@ import Template from './template/template';
 import StoryCheck from './storyCheck/storyCheck';
 import Testimony from './testimony/testimony';
 import TextEdit from './text/text';
+import StoryUpload from './storyUpload/storyUpload';
 import TemplateEdit from './templateEdit/template-edit';
 import Share from './share/share';
 import About from './about/about';
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/storyCheck' component={StoryCheck} />
         <Route exact path='/testimony' component={Testimony} />
         <Route exact path='/textEdit' component={TextEdit} />
+        <Route exact path='/storyUpload' component={StoryUpload} />
         <Route exact path='/templateEdit' component={TemplateEdit} />
         <Route exact path='/share' component={Share} />
         <Route exact path='/thankYouForComing' component={ThankYouForComing} />

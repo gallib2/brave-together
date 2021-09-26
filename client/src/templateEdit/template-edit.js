@@ -188,26 +188,25 @@ class TemplateEdit extends React.Component {
                                 />
                             );
                         })
-                    }
-                        <span className='colorPicker'>{this.state.chosenOption === 'backgrounds' && 
+                    }   
+                        <div className='colorPicker'>{this.state.chosenOption === 'backgrounds' && 
                         <CompactPicker
                         color={this.state.pickerColor}
                         onChange={ (color) => {
                             this.setState({ pickerColor: color})
                             this.setBackgroundColor(color.hex)}}
                             />}
-                        </span>
-                        <span className='fontSizes'>{this.state.chosenOption === 'fonts' && 
+                        </div>
+                        <div className='fontSizes'>{this.state.chosenOption === 'fonts' && 
                         <Select options={Constants.options} 
                         menuPlacement="top"
                         size={this.state.fontSize}
                         onChange={(size) => {console.log(size.value)
                             this.setState({fontSize: size.value}) 
                         } }
-                        // value={options[0]} 
                         placeholder="גודל" 
                         />
-                    }</span>
+                    }</div>
                 </div>
             </div>
         );

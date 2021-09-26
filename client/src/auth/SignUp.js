@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Submit, Input, DivForm, Input2, Label2, Header, Label,LogoImg,Body} from './Design/styledComponents';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import logo from '../assets/images/Logo.jpg';
-import axios from 'axios'
+import axios from 'axios';
 
 class SignUp extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class SignUp extends Component {
         let axiosConfig = {
             headers: {
                 'Content-Type': 'application/json  ',
-                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Origin": "*"
             }
           };
         console.log(signupDocument);
